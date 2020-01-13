@@ -17,7 +17,7 @@ docker network create nginx-proxy
 docker-compose -f cert-bot.yml up -d
 ```
 
-2. Add required environment variables to your container definition inside your docker-compose. 
+3. Add required environment variables to your container definition inside your docker-compose. 
 You can find an example definition in `example.docker-compose.yml`.
 
 ```yml
