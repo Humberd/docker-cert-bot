@@ -1,7 +1,7 @@
 # docker-cert-bot
 
 `cert-bot.yml` contains a docker-compose config that acts as a reverse proxy for other deployed containers,
-so that those containers are available under custom domain using Let's Encrypt.
+so that those containers are available under custom HTTPS domain using Let's Encrypt.
 
 ## Requirements:
 
