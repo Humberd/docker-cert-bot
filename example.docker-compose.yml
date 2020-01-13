@@ -1,0 +1,39 @@
+version: "3.6"
+
+services:
+  web-backend:
+    restart: always
+    build:
+      context: web-backend
+    ports:
+      - "8080:8080"
+    environment:
+      VIRTUAL_HOST: api.example.com
+      VIRTUAL_PORT: 8080
+      LETSENCRYPT_HOST: api.example.com
+      LETSENCRYPT_EMAIL: admin@admin.com
+    depends_on:
+      - elastic
+    networks:
+      - nginx-proxy
+
+  web-frontend:
+    restart: always
+    build:
+      context: web-frontend
+    ports:
+      - "8081:80"
+    environment:
+      VIRTUAL_HOST: ui.example.com
+      VIRTUAL_PORT: 8081
+      LETSENCRYPT_HOST: ui.example.com
+      LETSENCRYPT_EMAIL: admin@admin.com
+    networks:
+      - nginx-proxy
+
+
+networks:
+  nginx-proxy:
+    external:
+      name: nginx-proxy
+
