@@ -11,7 +11,7 @@ so that those containers are available under custom HTTPS domain using Let's Enc
 docker network create nginx-proxy
 ```
 
-2. Start cert bot.
+2. Start cert bot. (you do it only once, after that it will live its own life)
 
 ```shell
 docker-compose -f cert-bot.yml up -d
